@@ -1,6 +1,6 @@
 # vuetify-todo
 
-## Vutify textfield API
+## Vutify text field API
 
 ```
 <v-text-field
