@@ -1,7 +1,7 @@
 <template>
   <div>
-    <TodoInput @addTodo="addTodo" />
-    <TodoList :todos="todos" @doneTodo="doneTodo" @removeTodo="removeTodo" />
+    <TodoInput />
+    <TodoList :todos="todos" />
   </div>
 </template>
 
@@ -20,21 +20,18 @@ export default {
       ]
     }
   },
-  methods: {
-    addTodo(todo) {
-      this.todos.push({
-        id: new Date(),
-        text: todo,
-        done: false,
-        edit: false
-      })
-    },
-    doneTodo(todo) {
+  created() {
+    this.$eventBus.$on('addTodo', todo => {
+      this.todos.push(todo)
+    })
+
+    this.$eventBus.$on('doneTodo', todo => {
       todo.done = !todo.done
-    },
-    removeTodo(index) {
+    })
+
+    this.$eventBus.$on('removeTodo', index => {
       this.todos.splice(index, 1)
-    }
+    })
   }
 }
 </script>

@@ -23,14 +23,13 @@ export default {
     },
     addTodo() {
       if (this.newTodo !== '') {
-        this.$emit('addTodo', this.newTodo)
+        this.$eventBus.$emit('addTodo', {
+          id: new Date(),
+          text: this.newTodo,
+          done: false,
+          edit: false
+        })
 
-        // this.todos.push({
-        //   id: new Date(),
-        //   text: this.newTodo,
-        //   done: false,
-        //   edit: false
-        // })
         this.newTodo = ''
       }
     }

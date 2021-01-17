@@ -30,10 +30,10 @@ export default {
   props: ['todos'],
   methods: {
     doneTodo(todo) {
-      this.$emit('doneTodo', todo)
+      this.$eventBus.$emit('doneTodo', todo)
     },
     removeTodo(index) {
-      this.$emit('removeTodo', index)
+      this.$eventBus.$emit('removeTodo', index)
     }
   }
 }
