@@ -1,7 +1,7 @@
 <template>
   <v-list flat class="pt-0">
-    <div v-for="(todo, index) in todos" :key="index">
-      <v-list-item @click.stop="doneTodo(todo)" :class="{ 'blue lighten-5': todo.done }">
+    <div v-for="(todo, index) in $store.state.todos" :key="index">
+      <v-list-item @click.stop="doneTodo(index)" :class="{ 'blue lighten-5': todo.done }">
         <template v-slot:default>
           <v-list-item-action>
             <v-checkbox :input-value="todo.done"></v-checkbox>
@@ -29,11 +29,12 @@
 export default {
   props: ['todos'],
   methods: {
-    doneTodo(todo) {
-      this.$eventBus.$emit('doneTodo', todo)
+    doneTodo(index) {
+      this.$store.state.todos[index].done = !this.$store.state.todos[index].done
     },
     removeTodo(index) {
-      this.$eventBus.$emit('removeTodo', index)
+      this.$store.state.todos.splice(index, 1)
+      console.log(index)
     }
   }
 }

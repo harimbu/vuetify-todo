@@ -5,11 +5,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    todos: [
+      { id: 1, text: '일찍 일어나기', done: false, edit: false },
+      { id: 2, text: '커피 찾기', done: false, edit: false },
+      { id: 3, text: '커피 만들기', done: false, edit: false }
+    ]
   },
-  mutations: {
+  getters: {
+    todoCount(state) {
+      return state.todos.length
+    }
   },
-  actions: {
-  },
-  modules: {
-  }
+  mutations: {},
+  actions: {},
+  modules: {}
 })

@@ -29,7 +29,7 @@
 
     <v-app-bar app dark prominent shrink-on-scroll src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Vuetify Todo</v-toolbar-title>
+      <v-toolbar-title>Vuetify Todo({{ $store.getters.todoCount }})</v-toolbar-title>
       <v-spacer></v-spacer>
 
       <v-btn icon>
