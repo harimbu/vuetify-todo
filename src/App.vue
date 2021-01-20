@@ -29,7 +29,7 @@
 
     <v-app-bar app dark prominent shrink-on-scroll src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Vuetify Todo({{ $store.getters.todoCount }})</v-toolbar-title>
+      <v-toolbar-title>Vuetify Vue</v-toolbar-title>
       <v-spacer></v-spacer>
 
       <v-btn icon>
@@ -58,7 +58,8 @@ export default {
       drawer: null,
       items: [
         { title: 'Home', icon: 'mdi-home', to: '/' },
-        { title: 'Todo', icon: 'mdi-format-list-checks', to: '/todo' }
+        { title: 'Todo', icon: 'mdi-format-list-checks', to: '/todo' },
+        { title: 'User', icon: 'mdi-account', to: '/user' }
       ]
     }
   }

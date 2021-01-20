@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Todo from '../views/Todo'
 import Home from '../views/Home'
+import User from '../views/User'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/todo',
     name: 'Todo',
     component: Todo
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: User
   }
 ]
 

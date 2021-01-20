@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container grid-list-xs>
     <v-text-field
       v-model="newTodo"
       class="px-3 mt-5"
@@ -10,8 +10,7 @@
       @keyup.enter="addTodo"
       @blur="inputBlur"
     ></v-text-field>
-    <h1>Todocount : {{ $store.getters.todoCount }}</h1>
-  </div>
+  </v-container>
 </template>
 <script>
 export default {
